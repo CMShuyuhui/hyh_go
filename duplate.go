@@ -1,5 +1,5 @@
 // duplate.go prints the test of each line that appears more than once in the standard input , preceded by ist count
-package main
+package test_package
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func main() {
+func Test_duplate() {
 	counts := make(map[string]int)
 	input := bufio.NewScanner(os.Stdin)
 	for input.Scan() {

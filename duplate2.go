@@ -1,6 +1,6 @@
 // duplate.go prints the test of each line that appears more than once in the standard input.
 // It read from stdin or from a list of named files
-package main
+package test_package
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func main() {
+func Test_duplate2() {
 	counts := make(map[string]int)
 	files := os.Args[1:]
 	if len(files) == 0 {

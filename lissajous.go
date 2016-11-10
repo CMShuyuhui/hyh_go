@@ -1,4 +1,4 @@
-package main
+package test_package
 
 import (
 	"image"
@@ -17,7 +17,7 @@ const (
 	blackIndex = 1
 )
 
-func main() {
+func Test_lissajous() {
 	lissajous(os.Stdout)
 }
 
@@ -29,7 +29,6 @@ func lissajous(out io.Writer) {
 		nframes = 64
 		delay   = 8
 	)
-
 	freq := rand.Float64() * 3.0
 	anim := gif.GIF{LoopCount: nframes}
 	phase := 0.0
@@ -41,11 +40,9 @@ func lissajous(out io.Writer) {
 			y := math.Sin(t*freq + phase)
 			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5), blackIndex)
 		}
-
 		phase += 0.1
 		anim.Delay = append(anim.Delay, delay)
 		anim.Image = append(anim.Image, img)
-
 	}
 	gif.EncodeAll(out, &anim)
 
