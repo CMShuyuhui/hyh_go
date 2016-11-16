@@ -1,6 +1,6 @@
 // duplate.go prints the test of each line that appears more than once in the standard input.
 // It read from stdin or from a list of named files
-package test_package
+package mypath
 
 import (
 	"bufio"

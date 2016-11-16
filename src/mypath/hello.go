@@ -1,6 +1,7 @@
-package hello
+package mypath
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"os"
@@ -43,7 +44,16 @@ type PersonInfo struct {
 // }
 
 func Test_hello() {
+	a2 := []byte{1, 2, 3, 4, 5, 6, 7}
 
+	b2 := []byte{1, 2, 3, 4, 5, 6, 7}
+
+	isEqual := bytes.Equal(a2, b2)
+	if isEqual {
+		fmt.Println("a2 == b2")
+	} else {
+		fmt.Println("a2 != b2")
+	}
 	var personDB map[string]PersonInfo
 	personDB = make(map[string]PersonInfo)
 	personDB["1"] = PersonInfo{"1", "Huyuhui", "ShenZhen"}
@@ -93,28 +103,28 @@ func Test_hello() {
 	defer func() {
 		// do the things you want before main return
 	}()
-	// var myarray [10]int = [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	// fmt.Println("")
+	var myarray [10]int = [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	fmt.Println("")
 
-	// for _, v := range myarray {
-	// 	fmt.Print(v, " ")
-	// }
-	// fmt.Println("")
+	for _, v := range myarray {
+		fmt.Print(v, " ")
+	}
+	fmt.Println("")
 
-	// var myslice []int = myarray[:5]
-	// for _, v := range myslice {
-	// 	fmt.Print(v, " ")
-	// }
-	// fmt.Println("")
+	var myslice []int = myarray[:5]
+	for _, v := range myslice {
+		fmt.Print(v, " ")
+	}
+	fmt.Println("")
 
-	// var slice2 = make([]int, 5)
-	// for i := 0; i < len(slice2); i++ {
-	// 	fmt.Printf("hello world %d ：%s\n", v1, v2)
-	// 	firstname, lastname, nickname := GetName()
-	// 	fmt.Printf("firstname: %s, lastname: %s, nickname: %s\n", firstname, lastname, nickname)
-	// 	fmt.Printf("a: %d, b: %d, c: %d\n", a, b, c)
-	// 	fmt.Println("firstname: ", firstname, "lastname: ", lastname, " nickname: ", nickname)
-	// }
+	var slice2 = make([]int, 5)
+	for i := 0; i < len(slice2); i++ {
+		fmt.Printf("hello world %d ：%s\n", v1, v2)
+		firstname, lastname, nickname := GetName()
+		fmt.Printf("firstname: %s, lastname: %s, nickname: %s\n", firstname, lastname, nickname)
+		fmt.Printf("a: %d, b: %d, c: %d\n", a, b, c)
+		fmt.Println("firstname: ", firstname, "lastname: ", lastname, " nickname: ", nickname)
+	}
 	writeValuestoFile("log.txt", "hello world", "你好，我是胡宇辉", "1827398217947")
 }
 

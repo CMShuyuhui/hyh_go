@@ -1,5 +1,5 @@
 // duplate.go prints the test of each line that appears more than once in the standard input , preceded by ist count
-package test_package
+package mypath
 
 import (
 	"bufio"

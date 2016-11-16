@@ -1,4 +1,4 @@
-package test_package
+package mypath
 
 import (
 	"image"
